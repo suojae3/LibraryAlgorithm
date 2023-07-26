@@ -48,8 +48,13 @@ OUTER: while true {
 
 //MARK: 도서 검색  =================================================================
 
+// search data
+
+var bookList: [Int: String] = [:]
+
+// search scene 01
 enum SearchOptions: Int {
-    case goBack, bookName, bestSeller, backwardSearch
+    case goBack, bookName, bestSeller, searchISBN
 }
 
 func handleSearch() {
@@ -69,7 +74,7 @@ func handleSearch() {
                 print("도서이름으로 검색합니다")
             case .bestSeller:
                 print("베스트셀러를 검색합니다")
-            case .backwardSearch:
+            case .searchISBN:
                 print("ISBN 번호검색을 실행합니다")
             }
         }
