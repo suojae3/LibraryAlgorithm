@@ -23,6 +23,8 @@ while keepRunning {
             print("도서관리 프로그램을 종료합니다")
         case .lend:
             print("도서대출 프로그램입니다")
+            let lend = Lend()
+            lend.start()
         case .returnBook:
             print("도서반납 프로그램입니다")
         case .search:
