@@ -1,6 +1,8 @@
 import Foundation
 
 //MARK: 초기화면 =================================================================
+// 어떻게 작성하면 좋을지는 도서검색에 주석을 달아 보았습니다!
+
 
 enum Options: Int {
     case close, lend, returnBook, search, reserve, register, info
@@ -48,15 +50,21 @@ OUTER: while true {
 
 //MARK: 도서 검색  =================================================================
 
-// search data
 
+//먼저 기능 완성 -> 클래스/구조체 적용 -> controller 구현해보기
+
+    
 var bookList: [Int: String] = [:]
+    
 
-// search scene 01
+
+// search scene01
+// 1) 각 번호의 케이스를 정의한다
 enum SearchOptions: Int {
     case goBack, bookName, bestSeller, searchISBN
 }
-
+    
+// 2) 케이스 별로 실행시킬 함수를 정의한다
 func handleSearch() {
     while true {
         print("도서이름으로 검색하려면 1번\n베스트셀러를 검색하려면 2번\n이전 검색을 실행하려면 3번\n처음 화면으로 돌아가려면 0번을 눌러주세요\n\n")
@@ -64,12 +72,12 @@ func handleSearch() {
             print("번호를 잘못 입력하셨습니다, 재안내를 시작합니다\n\n")
             continue
         }
-
+            
         if let searchOption = SearchOptions(rawValue: inputNumber) {
             switch searchOption {
             case .goBack:
-                print("처음 화면으로 돌아갑니다\n\n")
-                return
+            print("처음 화면으로 돌아갑니다\n\n")
+            return
             case .bookName:
                 print("도서이름으로 검색합니다")
             case .bestSeller:
@@ -80,6 +88,10 @@ func handleSearch() {
         }
     }
 }
+    
+// 3) 함수를 메인씬이 주입한다
+// 1-3 과정 반복한다
+
 
 //MARK: 좌석 예약  =================================================================
 
