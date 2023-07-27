@@ -10,7 +10,6 @@ import Foundation
 class Lend {
     var book: String = ""
     var id: String = ""
-    var returnDate: String = ""
     
     func start() {
         inputInfo()
@@ -24,6 +23,7 @@ class Lend {
             print("잘못된 도서명입니다. 다시 입력해주세요.")
             book = readLine() ?? ""
         }
+        
         print("회원ID를 입력해주세요.")
         id = readLine() ?? ""
         while id == "" {
@@ -64,13 +64,13 @@ class Lend {
     }
     
     func checkOptionNumber(_ number: Int) -> Int {
-        var newNumber = number
-        while newNumber > 2 || newNumber < 1 {
+        var inputNumber = number
+        while inputNumber > 2 || inputNumber < 1 {
             print("잘못된 번호입니다. 다시 입력해주세요.")
             let input = readLine() ?? ""
-            newNumber = Int(input) ?? 0
+            inputNumber = Int(input) ?? 0
         }
-        return newNumber
+        return inputNumber
     }
     
     func calculateReturnDate() -> String {
