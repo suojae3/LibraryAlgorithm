@@ -1,9 +1,9 @@
 
 import Foundation
 
+//MARK: 도서 데이터 ==================================================================
 
-//MARK: 도서 데이터 =================================================================
-
+//책정보
 struct Book {
     let title: String
     let author: String
@@ -12,10 +12,10 @@ struct Book {
     var sales: Int
 }
 
-
+//도서관 책 소장 목록
 var library: [String: Book] = [
     
-    "Book1": Book(title: "Book1", author: "Author1", isLend: false, genre: "Essay", sales: 1),
+    "Book1": Book(title: "Book1", author: "Author1", isLend: true, genre: "Essay", sales: 1),
     "Book2": Book(title: "Book2", author: "Author2", isLend: false, genre: "Essay", sales: 2),
     "Book3": Book(title: "Book3", author: "Author3", isLend: false, genre: "Essay", sales: 3),
     "Book4": Book(title: "Book4", author: "Author4", isLend: false, genre: "Essay", sales: 4),
@@ -27,3 +27,19 @@ var library: [String: Book] = [
     "Book10": Book(title: "Book10", author: "Author10", isLend: false, genre: "Non-Fiction", sales: 10)
     
 ]
+
+//회원정보
+struct Member {
+    let name: String
+    let phoneNumber: String
+    var borrowedBooks: [String]
+}
+
+var members: [String: Member] = [
+    "종혁": Member(name: "종혁", phoneNumber: "1", borrowedBooks: ["Book1"]),
+    "주연k": Member(name: "주연k", phoneNumber: "2", borrowedBooks: []),
+    "주연j": Member(name: "주연j", phoneNumber: "3", borrowedBooks: []),
+    "서진": Member(name: "서진", phoneNumber: "4", borrowedBooks: []),
+    "은서": Member(name: "은서", phoneNumber: "5", borrowedBooks: []),
+]
+
