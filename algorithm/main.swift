@@ -64,7 +64,7 @@ mainLoop: while true {
             
         case .search:
             handleSearch()
-            break mainLoop
+            break
         case .reserve:
             print("도서예약 프로그램입니다")
             
