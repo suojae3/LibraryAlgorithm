@@ -37,9 +37,9 @@ struct Member {
 }
 
 var members: [String: Member] = [
-    "jonhyuck": Member(id: 001, name: "종혁", phoneNumber: "1", borrowedBooks: ["book1"]),
-    "juyeon_k": Member(id: 002, name: "주연k", phoneNumber: "2", borrowedBooks: []),
-    "juyeon_j": Member(id: 003, name: "주연j", phoneNumber: "3", borrowedBooks: []),
-    "seojin": Member(id: 004, name: "서진", phoneNumber: "4", borrowedBooks: []),
-    "eunseo": Member(id: 005, name: "은서", phoneNumber: "5", borrowedBooks: []),
+    "jonhyuck": Member(id: 1, name: "종혁", phoneNumber: "1", borrowedBooks: ["book1"]),
+    "juyeon_k": Member(id: 2, name: "주연k", phoneNumber: "2", borrowedBooks: []),
+    "juyeon_j": Member(id: 3, name: "주연j", phoneNumber: "3", borrowedBooks: []),
+    "seojin": Member(id: 4, name: "서진", phoneNumber: "4", borrowedBooks: []),
+    "eunseo": Member(id: 5, name: "은서", phoneNumber: "5", borrowedBooks: []),
 ]
