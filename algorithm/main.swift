@@ -11,6 +11,8 @@ func readInput() -> String? {
     return readLine()
 }
 
+
+//각 클래스 인스턴스 생성
 let search = Search()
 
 
