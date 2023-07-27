@@ -28,6 +28,8 @@ OUTER: while true {
             lend.start()
         case .returnBook:
             print("도서반납 프로그램입니다")
+            let returnBook = Return()
+            returnBook.start()
         case .search:
             handleSearch()
         case .reserve:
