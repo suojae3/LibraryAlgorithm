@@ -1,9 +1,6 @@
 import Foundation
 
 
-import Foundation
-
-
 //MARK: 초기화면 =================================================================
 
 enum Options: Int {
