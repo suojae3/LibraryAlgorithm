@@ -15,9 +15,9 @@ struct TestCase {
 }
 
 var testCaseList: [Int:TestCase] = [
-    1:TestCase(userId: "userId1", tilte: "모모", date: "2023-06-30"),
+    1:TestCase(userId: "userId1", tilte: "momo", date: "2023-06-30"),
     2:TestCase(userId: "userId2", tilte: "삼국지", date: "2023-07-30"),
-    3:TestCase(userId: "userId1", tilte: "슬램덩크", date: "2023-08-30"),
+    3:TestCase(userId: "userId1", tilte: "slam dunk", date: "2023-08-30"),
     4:TestCase(userId: "userId3", tilte: "그해여름", date: "2023-09-30")
 ]
 
@@ -156,6 +156,77 @@ class UserInfo {
             연체 : \(result)
             """)
         }
+        
+        showRenewBook()
+    }
+    
+    func showRenewBook() {
+        
+        print("""
+
+        1 대출 연장하기
+        0 돌아가기
+        """)
+        
+        var input = readLine() ?? ""
+        
+        while input == "" {
+            print("빈칸입니다")
+            input = readLine() ?? ""
+        }
+        
+        if let number = Int(input) {
+            if number == 1 {
+                inputRenewBookInfo()
+            } else {
+                start()
+                showMenuSwitch = true
+            }
+        }
+    }
+    
+    func inputRenewBookInfo() {
+        print("연장할 도서명을 입력해 주세요")
+        
+        var title = readLine() ?? ""
+        
+        while title == "" {
+            print("빈칸입니다")
+            title = readLine() ?? ""
+        }
+
+        let renewBook = testCaseList.filter({ $0.1.userId == userId && $0.1.tilte == title })
+    
+
+        guard let lendDate = renewBook.first?.value.date else { return }
+
+
+        let result = checkOverdue(dateString: lendDate)
+
+        if result == "연체중입니다" {
+            print("연체중입니다. 대출 연장 불가")
+            start()
+            showMenuSwitch = true
+        }
+        
+        
+        //형식 체크, 과거 날짜 체크 등 많지만 일단 생략..
+        print("연장할 날짜를 입력해 주세요 (형식 2023-07-12)")
+        
+        var renewDate = readLine() ?? ""
+        
+        while renewDate == "" {
+            print("빈칸입니다")
+            renewDate = readLine() ?? ""
+        }
+        
+        testCaseList[renewBook.first!.key]?.date = renewDate
+        
+        print("""
+            대출 연장되었습니다
+            """)
+        
+        showRenewBook()
     }
     
     func checkOverdue(dateString: String) -> String {
