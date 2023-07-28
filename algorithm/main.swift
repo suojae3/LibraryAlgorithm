@@ -16,6 +16,8 @@ func readInput() -> String? {
 let search = Search()
 let lend = Lend()
 let register = Register()
+let reserve = Reserve()
+
 
 
 //Main Loop 실행
@@ -47,7 +49,7 @@ mainLoop: while true {
             
         case .reserve:
             print("도서예약 프로그램입니다")
-            
+            reserve.start()
         case .register:
             register.inputInfo()
             
