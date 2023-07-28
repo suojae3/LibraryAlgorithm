@@ -70,7 +70,7 @@ struct Search {
     //도서예약
     func bookReserve() {
     reserveLoop: while true {
-        print("\n책예약을 원하신다면 1번 책제목 재검색을 원하신다면 2번, 이전화면으로 돌아가고싶다면 0번을 눌러주세요\n")
+        print("\n책예약을 원하신다면 1번 책제목 재검색을 원하신다면 2번을 눌러주세요\n")
         
         guard let input = readLine(), let inputNum = Int(input), inputNum >= 1, inputNum <= 2 else {
             print("\n잘못 입력했습니다. 다시 번호를 입력해주세요\n")
@@ -78,41 +78,16 @@ struct Search {
         }
         
         
-        if inputNum == 0 {
-            break reserveLoop
-        } else if inputNum == 1 {
-            userAccess()
-
-        } else if inputNum == 2 {
-            print("도서명을 입력해주세요")
-            break reserveLoop
-        }
-        
-        else {
+        if inputNum == 1 {
+            print("도서대출 페이지로 이동합니다")
+            lend.inputInfo()
+        } else {
             print("도서명을 입력해주세요\n")
             break reserveLoop
         }
     }
     }
     
-    func userAccess() {
-        print("회원이름을 입력해주세요, 이전화면으로 되돌아가고싶다면 0번을 눌러주세요")
-    accessLoop: while true {
-        guard let input = readLine() else {
-            continue
-        }
-        
-        if members.keys.contains(input) {
-            print("성공")
-            break
-        } else if input == "0" {
-            break accessLoop
-        } else {
-            print("\n회원이름을 잘못입력하셨습니다, 회원이름을 재입력해주세요\n이전화면으로 되돌아가고싶다면 0번을 눌러주세요\n")
-            continue
-        }
-    }
-    }
 }
 
 
