@@ -11,7 +11,7 @@ struct Book {
     let genre: String
     var sales: Int
 }
-
+var test = "test"
 //도서관 책 소장 목록
 var library: [String: Book] = [
     
