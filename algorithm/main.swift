@@ -4,6 +4,7 @@ import Foundation
 import Foundation
 
 
+
 //MARK: 초기화면 =================================================================
 
 enum Options: Int {
@@ -17,7 +18,7 @@ func readInput() -> String? {
 
 
 let search = Search()
-
+let register = Register()
 
 //Main Loop 실행
 mainLoop: while true {
@@ -49,7 +50,7 @@ mainLoop: while true {
             print("도서예약 프로그램입니다")
             
         case .register:
-            print("도서등록 프로그램입니다")
+            register.inputMember()
             
         case .info:
             print("도서정보 프로그램입니다")
