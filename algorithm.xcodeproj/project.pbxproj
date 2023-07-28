@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08A92EED2A7247EF0049D507 /* search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A92EEC2A7247EF0049D507 /* search.swift */; };
+		080EBDE72A7361D20016F00D /* search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EBDE62A7361D20016F00D /* search.swift */; };
 		08A92EEF2A7248A50049D507 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A92EEE2A7248A50049D507 /* data.swift */; };
 		08EB783E2A6EA37D00C18D91 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EB783D2A6EA37D00C18D91 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		08A92EEC2A7247EF0049D507 /* search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = search.swift; sourceTree = "<group>"; };
+		080EBDE62A7361D20016F00D /* search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = search.swift; sourceTree = "<group>"; };
 		08A92EEE2A7248A50049D507 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		08EB783A2A6EA37D00C18D91 /* algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		08EB783D2A6EA37D00C18D91 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 			children = (
 				08A92EEE2A7248A50049D507 /* data.swift */,
 				08EB783D2A6EA37D00C18D91 /* main.swift */,
-				08A92EEC2A7247EF0049D507 /* search.swift */,
+				080EBDE62A7361D20016F00D /* search.swift */,
 			);
 			path = algorithm;
 			sourceTree = "<group>";
@@ -126,7 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08A92EED2A7247EF0049D507 /* search.swift in Sources */,
+				080EBDE72A7361D20016F00D /* search.swift in Sources */,
 				08EB783E2A6EA37D00C18D91 /* main.swift in Sources */,
 				08A92EEF2A7248A50049D507 /* data.swift in Sources */,
 			);
