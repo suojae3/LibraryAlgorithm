@@ -60,28 +60,27 @@ class UserInfo {
     var userId: String = ""
     
     func start() {
-        
-        //try catch 를 써서 예외 처리를 해보고 싶어서 도전해봤는데 이렇게 공통된 부분이 겹치는 게 마음에 들지 않는다
+
         while userId.isEmpty {
             do {
                 try userId = checkUserId()
             } catch {
-                switch error {
-                case UserInfoError.isEmpty: print("빈칸입니다")
-                case UserInfoError.isMissMatch: print("일치하지 않습니다")
-                default: print("에러가 발생했습니다")
-                }
+                inputErrorMessage(error: error)
             }
         }
         
         do {
             try showMenu()
         } catch {
-            switch error {
-            case UserInfoError.isEmpty: print("빈칸입니다")
-            case UserInfoError.isMissMatch: print("일치하지 않습니다")
-            default: print("에러가 발생했습니다")
-            }
+            inputErrorMessage(error: error)
+        }
+    }
+    
+    func inputErrorMessage(error: Error) {
+        switch error {
+        case UserInfoError.isEmpty: print("빈칸입니다")
+        case UserInfoError.isMissMatch: print("일치하지 않습니다")
+        default: print("에러가 발생했습니다")
         }
     }
     
