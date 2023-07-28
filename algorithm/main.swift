@@ -14,6 +14,7 @@ func readInput() -> String? {
 
 
 let search = Search()
+let lend = Lend()
 
 
 //Main Loop 실행
