@@ -1,5 +1,9 @@
 import Foundation
 
+
+import Foundation
+
+
 //MARK: 초기화면 =================================================================
 
 enum Options: Int {
@@ -12,7 +16,6 @@ func readInput() -> String? {
 }
 
 
-//각 클래스 인스턴스 생성
 let search = Search()
 
 
@@ -50,7 +53,6 @@ mainLoop: while true {
             
         case .info:
             print("도서정보 프로그램입니다")
-            
         }
     }
 }
