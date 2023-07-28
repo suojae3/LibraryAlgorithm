@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Member {
+struct LibraryMember {
     var id: String
     var bookList: [String]
 }

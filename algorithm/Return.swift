@@ -8,9 +8,9 @@
 import Foundation
 
 class Return {
-    var memberList = [Member(id: "123", bookList: ["세이노의 가르침", "아기 판다 푸바오", "도둑맞은 집중력"]),
-                      Member(id: "456", bookList: ["건널목의 유령"]),
-                      Member(id: "789", bookList: [])]
+    var memberList = [LibraryMember(id: "123", bookList: ["세이노의 가르침", "아기 판다 푸바오", "도둑맞은 집중력"]),
+                      LibraryMember(id: "456", bookList: ["건널목의 유령"]),
+                      LibraryMember(id: "789", bookList: [])]
     
     var id = ""
     var memberIndex = 0
