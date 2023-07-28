@@ -127,11 +127,11 @@ class UserInfo {
         let number = UserInfoOption(rawValue: option)
         
         switch number {
-        case .backMain: print("돌아감")
+        case .backMain: break
         case .lendBook: showLendBook()
         case .reserveBook: showReserveBook()
         case .userInfo: showUserInfo()
-        default: print("기본") //아마도 돌아가는 메뉴 넣으면 될 것 같은데
+        default: break
         }
         
         showMenuSwitch = false
