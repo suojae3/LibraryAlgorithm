@@ -50,7 +50,9 @@ mainLoop: while true {
             print("도서등록 프로그램입니다")
             
         case .info:
-            print("도서정보 프로그램입니다")
+            print("회원정보 프로그램입니다")
+            let userInfo = UserInfo()
+            userInfo.start()
         }
     }
 }
