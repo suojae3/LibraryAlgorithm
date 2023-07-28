@@ -57,6 +57,8 @@ enum UserInfoOption: Int {
 
 class UserInfo {
     
+    var showMenuSwitch = true
+    
     var userId: String = ""
     
     func start() {
@@ -69,10 +71,13 @@ class UserInfo {
             }
         }
         
-        do {
-            try showMenu()
-        } catch {
-            inputErrorMessage(error: error)
+        
+        while showMenuSwitch {
+            do {
+                try showMenu()
+            } catch {
+                inputErrorMessage(error: error)
+            }
         }
     }
     
@@ -128,6 +133,8 @@ class UserInfo {
         case .userInfo: showUserInfo()
         default: print("기본") //아마도 돌아가는 메뉴 넣으면 될 것 같은데
         }
+        
+        showMenuSwitch = false
     }
     
     func showLendBook() {
