@@ -72,13 +72,15 @@ struct Search {
     reserveLoop: while true {
         print("\n책예약을 원하신다면 1번 책제목 재검색을 원하신다면 2번, 이전화면으로 돌아가고싶다면 0번을 눌러주세요\n")
         
-        guard let input = readLine(), let inputNum = Int(input), inputNum >= 1, inputNum <= 2 else {
+        guard let input = readLine(), let inputNum = Int(input), inputNum >= 0, inputNum <= 2 else {
             print("\n잘못 입력했습니다. 다시 번호를 입력해주세요\n")
             continue
         }
         
         
         if inputNum == 0 {
+            print("\n도서명을 입력해주세요\n")
+
             break reserveLoop
         } else if inputNum == 1 {
             userAccess()
