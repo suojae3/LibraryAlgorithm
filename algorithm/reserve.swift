@@ -73,7 +73,8 @@ class Reserve {
     
     //--- 제 1 열람실 좌석확인 및 예약 -----------------------------------------------------------------------------------
     var option = 0
-    let seat1 : [Int: Int] = [1: 01, 2: 06, 3: 19, 4: 52, 5: 70]
+    var userList : [String: Int] = [:]
+    let seat1 : [Int: Int] = [1: 12, 2: 28, 3: 19, 4: 52, 5: 70]
     
     func roomSeatCheck1(){
         if seat1.isEmpty{
@@ -101,18 +102,18 @@ class Reserve {
             func seatNumber1() {
                 print("예약하실 좌석번호를 입력해 주세요.")
                 numCheck = Int(readLine() ?? "")
-                guard let numCheck = numCheck
+                guard var numCheck = numCheck
                 else {
                     return
                 }
                 while !seat1.values.contains(numCheck) {
                     print("잘못 입력하셨습니다. 예약이 가능한 좌석번호를 입력해 주세요.")
-                    var numCheck = Int(readLine() ?? "")
-                    guard let numCheck = numCheck
+                    var inputNumCheck = Int(readLine() ?? "")
+                    guard let seatNumCheck = inputNumCheck
                     else {
                         continue
                     }
-                    print("예약하실 회원님의 ID를 입력해 주세요.")
+                    numCheck = seatNumCheck
                     break
                 }
                 
@@ -145,9 +146,13 @@ class Reserve {
                     }
                 }
                 func seatResert() {
-                    print("예약이 완료되었습니다.")
+                    print("------------------")
+                    print(" 예약이 완료되었습니다.")
+                    print("------------------\n")
                     print("1. 예약 내역 확인")
                     print("2. 홈으로 돌아가기")
+                    
+                    userList = ["\(id)": numCheck]
                     
                     guard let input = readLine(), let option = Int(input) else {return}
                     if option == 1{
@@ -168,16 +173,38 @@ class Reserve {
     
     //--- 제 1 열람실 예약확인 -----------------------------------------------------------------------------------------
     func reserveCheck1() {
+        var option = 0
+        
         print("--------------------------")
         print("예약할 때 사용한 ID를 입력해주세요.")
         print("--------------------------")
         
+        guard let input = readLine()
+        else {
+            return
+        }
         
+        guard let userSeat = userList[input]
+        else {
+            print("\(input) 해당 ID는 등록되지 않은 ID입니다. ID를 다시 입력해 주세요")
+            return reserveCheck1()
+        }
+        
+        print("--------------------------")
+        print( "\(input)님의 예약 내역입니다.\n")
+        print( "ID: \(input)")
+        print( "좌석번호: \(userSeat)")
+        print("--------------------------")
+        print("1. 홈 화면으로 돌아가기")
+        
+        option = Int(readLine() ?? "") ?? 0
+        if option == 1{
+            start()
+        } else {
+            print("번호를 다시 입력해 주세요.")
+            return
+        }
     }
-    
-    
-    
-    
     
     
     //--- 제 2 열람실 메인 화면 ----------------------------------------------------------------------------------------
@@ -199,7 +226,7 @@ class Reserve {
             reserveCheck2()
         }
         else if room2 == 0{
-            readInput()
+            start()
         }
         else{print("번호를 다시 입력해 주세요.")
             return handleRoom2()
@@ -234,19 +261,112 @@ class Reserve {
             seatNumber2()
         }
         else{print("번호를 다시 입력해 주세요.")
-            return roomSeatCheck2() // 제 2 열람실 예약 페이지
+            return roomSeatCheck2()
         }
         
         func seatNumber2() {
-            // 좌석번호 입력 창
-            // 좌석번호를 입력해주세요.
+            print("예약하실 좌석번호를 입력해 주세요.")
+            numCheck = Int(readLine() ?? "")
+            guard var numCheck = numCheck
+            else {
+                return
+            }
+            while !seat1.values.contains(numCheck) {
+                print("잘못 입력하셨습니다. 예약이 가능한 좌석번호를 입력해 주세요.")
+                var inputNumCheck = Int(readLine() ?? "")
+                guard let seatNumCheck = inputNumCheck
+                else {
+                    continue
+                }
+                numCheck = seatNumCheck
+                break
+            }
+            
+            print("예약하실 회원님의 ID를 입력해 주세요.")
+            id = readLine() ?? ""
+            while id == "" {
+                print("잘못된 ID입니다. ID를 다시 입력해 주세요.")
+                id = readLine() ?? ""
+            }
+            return seatReserveCheck()
+            
+            func seatReserveCheck() {
+                print("""
+                --------------------------------
+                 좌석번호  \(numCheck)
+                 회원 ID  \(id)
+                --------------------------------
+                 이 정보로 좌석을 예약하시겠습니까?
+                 예약하기는 1번, 뒤로가기는 2번을 눌러주세요.
+                """)
+                
+                guard let input = readLine(), let option = Int(input) else {return}
+                if option == 1{
+                    seatResert()
+                } else if option == 2{
+                    seatNumber2()
+                } else {
+                    print("번호를 다시 입력해 주세요.")
+                    return seatNumber2()
+                }
+            }
+            func seatResert() {
+                print("------------------")
+                print(" 예약이 완료되었습니다.")
+                print("------------------\n")
+                print("1. 예약 내역 확인")
+                print("2. 홈으로 돌아가기")
+                
+                userList = ["\(id)": numCheck]
+                
+                guard let input = readLine(), let option = Int(input) else {return}
+                if option == 1{
+                    reserveCheck1()
+                } else if option == 2{
+                    start()
+                } else {
+                    print("번호를 다시 입력해 주세요.")
+                    return seatResert()
+                }
+            }
         }
     }
     
     
     //--- 제 2 열람실 예약확인 -----------------------------------------------------------------------------------------
     func reserveCheck2() {
+        var option = 0
+        
+        print("--------------------------")
+        print("예약할 때 사용한 ID를 입력해주세요.")
+        print("--------------------------")
+        
+        guard let input = readLine()
+        else {
+            return
+        }
+        
+        guard let userSeat = userList[input]
+        else {
+            print("\(input) 해당 ID는 등록되지 않은 ID입니다. ID를 다시 입력해 주세요")
+            return reserveCheck1()
+        }
+        
+        print("--------------------------")
+        print( "\(input)님의 예약 내역입니다.\n")
+        print( "ID: \(input)")
+        print( "좌석번호: \(userSeat)")
+        print("--------------------------")
+        print("1. 홈 화면으로 돌아가기")
+        
+        option = Int(readLine() ?? "") ?? 0
+        if option == 1{
+            start()
+        } else {
+            print("번호를 다시 입력해 주세요.")
+            return
+        }
         
     }
-    
 }
+
