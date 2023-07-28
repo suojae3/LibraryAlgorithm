@@ -36,11 +36,12 @@ mainLoop: while true {
             
         case .lend:
             print("도서대출 프로그램입니다")
-            break
-            
+            let lend = Lend()
+            lend.start()
         case .returnBook:
             print("도서반납 프로그램입니다")
-            
+            let returnBook = Return()
+            returnBook.start()
         case .search:
             search.handleSearch()
             break
