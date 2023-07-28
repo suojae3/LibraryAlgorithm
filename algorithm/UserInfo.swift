@@ -279,26 +279,38 @@ class UserInfo {
             """)
         }
 
-        print("변경할 것을 선택해 주세요")
+        print("""
+
+        1 변경하기
+        0 돌아가기
+        """)
         
         guard let input = readLine(), !input.isEmpty else {
             print("빈칸입니다")
             return
         }
         
-        changeUserInfo(option: input)
+        if Int(input) == 1 {
+            changeUserInfo()
+        } else {
+            start()
+        }
     }
     
-    func changeUserInfo(option: String) {
+    func changeUserInfo() {
+        
+        print("변경을 원하는 메뉴를 입력해 주세요(a 이름, b 이메일)")
+        
+        guard let option = readLine(), !option.isEmpty else {
+            print("빈칸입니다")
+            return
+        }
         
         print("변경할 사항을 입력해 주세요")
-        
-        var changeText = ""
-        changeText = readLine() ?? ""
-        
-        while changeText == "" {
-            print("빈칸입니다. 다시 입력해 주세요")
-            changeText = readLine() ?? ""
+                
+        guard let changeText = readLine(), !changeText.isEmpty else {
+            print("빈칸입니다")
+            return
         }
         
         if option == "a" {
