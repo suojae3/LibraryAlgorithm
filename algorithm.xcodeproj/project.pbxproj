@@ -69,13 +69,10 @@
 			children = (
 				08A92EEE2A7248A50049D507 /* data.swift */,
 				08EB783D2A6EA37D00C18D91 /* main.swift */,
-<<<<<<< HEAD
 				08A92EEC2A7247EF0049D507 /* search.swift */,
-=======
 				E2E3924D2A6F7F1C00E12A25 /* Return.swift */,
 				E2E3924B2A6F7F0C00E12A25 /* Lend.swift */,
 				E27AB5122A722B2200BE53AA /* Member.swift */,
->>>>>>> feature/lend_return
 			);
 			path = algorithm;
 			sourceTree = "<group>";
@@ -138,16 +135,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				08A92EED2A7247EF0049D507 /* search.swift in Sources */,
 				08EB783E2A6EA37D00C18D91 /* main.swift in Sources */,
 				08A92EEF2A7248A50049D507 /* data.swift in Sources */,
-=======
 				E2E3924C2A6F7F0C00E12A25 /* Lend.swift in Sources */,
 				08EB783E2A6EA37D00C18D91 /* main.swift in Sources */,
 				E2E3924E2A6F7F1C00E12A25 /* Return.swift in Sources */,
 				E27AB5132A722B2200BE53AA /* Member.swift in Sources */,
->>>>>>> feature/lend_return
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
