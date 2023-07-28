@@ -80,7 +80,7 @@ struct Search {
         
         if inputNum == 1 {
             print("도서대출 페이지로 이동합니다")
-            lend.inputInfo()
+            lend.start()
         } else {
             print("도서명을 입력해주세요\n")
             break reserveLoop
