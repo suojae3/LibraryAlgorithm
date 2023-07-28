@@ -79,7 +79,8 @@ struct Search {
         
         
         if inputNum == 0 {
-            print("\n도서명을 입력해주세요test\n")
+            
+            print("\n도서명을 입력해주세요\n")
             break reserveLoop
         } else if inputNum == 1 {
             userAccess()
